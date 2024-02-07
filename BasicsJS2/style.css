@@ -1,0 +1,19 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+#myButton {
+  font-size: 3em;
+  padding: 5px 25px;
+  border-radius: 5px;
+  /* border: none; */
+}
+
+.myLabels {
+  font-size: 3em;
+}
+
+#mySubmit {
+  font-size: 1em;
+}
