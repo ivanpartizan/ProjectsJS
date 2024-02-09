@@ -134,3 +134,76 @@
 // } // That is NOT Pi
 
 // WHILE loop = repeat some code WHILE some condition is true
+
+// let username = "";
+
+// while (username === "" || username === null) {
+//   username = window.prompt("Enter your username: ");
+// }
+
+// console.log(`Hello ${username}`);
+
+// DO WHILE LOOP
+// let username;
+
+// do {
+//   username = window.prompt("Enter your username: ");
+// } while (username === "" || username === null);
+
+// console.log(`Hello ${username}`);
+
+// let loggedIn = false;
+// let username;
+// let password;
+
+// while (!loggedIn) {
+//   username = window.prompt("Enter your username: ");
+//   password = window.prompt("Enter your password: ");
+
+//   if (username === "myUsername" && password === "myPassword") {
+//     loggedIn = true;
+//     console.log("You are logged in!");
+//   } else {
+//     console.log("Invalid credentials! Please try again!");
+//   }
+// }
+
+// DO WHILE LOOP
+// let loggedIn = false;
+// let username;
+// let password;
+
+// do {
+//   username = window.prompt("Enter your username: ");
+//   password = window.prompt("Enter your password: ");
+
+//   if (username === "myUsername" && password === "myPassword") {
+//     loggedIn = true;
+//     console.log("You are logged in!");
+//   } else {
+//     console.log("Invalid credentials! Please try again!");
+//   }
+// } while (!loggedIn);
+
+// FOR loop = repeat some code a LIMITED amount of times
+
+// for (let i = 1; i <= 10; i++) {
+//   console.log(i);
+// }
+
+// for (let i = 2; i <= 10; i += 2) {
+//   console.log(i);
+// }
+
+// for (let i = 10; i > 0; i--) {
+//   console.log(i);
+// }
+
+// for (let i = 1; i <= 20; i++) {
+//   if (i == 13) {
+//     // continue;
+//     // break;
+//   } else {
+//     console.log(i);
+//   }
+// }
