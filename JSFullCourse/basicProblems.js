@@ -48,6 +48,29 @@ function findSmallestInt(arr) {
 
 findSmallestInt([78, 56, 232, 12, 18]);
 
+// Grasshopper - Summation
+function summation(num) {
+  let sum = 0;
+  for (let i = 1; i <= num; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+summation(8);
+
+// Get the mean of an array
+function getAverage(marks) {
+  let sum = 0;
+  for (let mark of marks) {
+    sum += mark;
+  }
+  let average = Math.floor(sum / marks.length);
+  return average;
+}
+
+getAverage([1, 2, 3, 4, 5]);
+
 // 7kyu
 // Vowel Count
 function getCount(str) {
