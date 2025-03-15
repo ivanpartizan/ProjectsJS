@@ -27,13 +27,6 @@ function isDivisible(n, x, y) {
 
 isDivisible(12, 3, 4);
 
-// Reversed Strings
-function reverseString(str) {
-  return str.split("").reverse().join("");
-}
-
-reverseString("world");
-
 // Find the smallest integer in the array
 function findSmallestInt(arr) {
   let smallestInteger = arr[0];
@@ -42,7 +35,6 @@ function findSmallestInt(arr) {
       smallestInteger = arr[i];
     }
   }
-
   return smallestInteger;
 }
 
@@ -70,6 +62,53 @@ function getAverage(marks) {
 }
 
 getAverage([1, 2, 3, 4, 5]);
+
+// Sum of positive
+function positiveSum(arr) {
+  let sum = 0;
+  for (let number of arr) {
+    if (number > 0) sum += number;
+  }
+  return sum;
+}
+
+positiveSum([1, -2, 3, 4, 5]);
+
+// Reversed Strings
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+
+reverseString("world");
+
+// Remove First and Last Character
+function removeChar(str) {
+  let newWord = "";
+
+  for (let i = 1; i < str.length - 1; i++) {
+    newWord += str[i];
+  }
+
+  return newWord;
+}
+
+removeChar("country");
+
+// Rock Paper Scissors!
+function rps(p1, p2) {
+  if (p1 === p2) return "Draw!";
+  if (
+    (p1 === "rock" && p2 === "scissors") ||
+    (p1 === "scissors" && p2 === "paper") ||
+    (p1 === "paper" && p2 === "rock")
+  ) {
+    return "Player 1 won!";
+  } else {
+    return "Player 2 won!";
+  }
+}
+
+rps("paper", "rock");
 
 // 7kyu
 // Vowel Count
