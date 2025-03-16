@@ -74,6 +74,13 @@ function positiveSum(arr) {
 
 positiveSum([1, -2, 3, 4, 5]);
 
+// Convert a string to an array
+function stringToArray(string) {
+  return string.split(" ");
+}
+
+stringToArray("I love arrays they are my favorite");
+
 // Reversed Strings
 function reverseString(str) {
   return str.split("").reverse().join("");
@@ -94,6 +101,32 @@ function removeChar(str) {
 
 removeChar("country");
 
+// Remove String Spaces
+function noSpace(str) {
+  let newString = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== " ") newString += str[i];
+  }
+
+  return newString;
+}
+
+noSpace("8 j 8   mBliB8g  imjB8B8  jl  B");
+
+// String repeat
+function repeatStr(num, str) {
+  let repeatedStr = "";
+
+  for (let i = 1; i <= num; i++) {
+    repeatedStr += str;
+  }
+
+  return repeatedStr;
+}
+
+repeatStr(5, "#");
+
 // Rock Paper Scissors!
 function rps(p1, p2) {
   if (p1 === p2) return "Draw!";
@@ -109,6 +142,26 @@ function rps(p1, p2) {
 }
 
 rps("paper", "rock");
+
+// Basic Mathematical Operations
+function basicOp(operation, value1, value2) {
+  switch (operation) {
+    case "+":
+      return value1 + value2;
+      break;
+    case "-":
+      return value1 - value2;
+      break;
+    case "*":
+      return value1 * value2;
+      break;
+    case "/":
+      return value1 / value2;
+      break;
+  }
+}
+
+basicOp("*", 5, 5);
 
 // 7kyu
 // Vowel Count
