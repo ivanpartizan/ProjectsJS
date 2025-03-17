@@ -6,6 +6,13 @@ function multiply(a, b) {
 
 multiply(5, 2);
 
+// Is he gonna survive?
+function hero(bullets, dragons) {
+  return bullets / dragons >= 2 ? true : false;
+}
+
+hero(10, 5);
+
 // Return Negative
 function makeNegative(num) {
   return num <= 0 ? num : -num;
@@ -19,6 +26,13 @@ function evenOrOdd(number) {
 }
 
 evenOrOdd(2);
+
+// Beginner - Lost Without a Map
+function maps(nums) {
+  return nums.map((num) => num * 2);
+}
+
+maps([1, 2, 3]);
 
 // Is n divisible by x and y?
 function isDivisible(n, x, y) {
@@ -73,6 +87,20 @@ function positiveSum(arr) {
 }
 
 positiveSum([1, -2, 3, 4, 5]);
+
+// Array plus array
+function arrayPlusArray(arr1, arr2) {
+  let sum = 0;
+  for (let i = 0; i < arr1.length; i++) {
+    sum += arr1[i];
+  }
+  for (let i = 0; i < arr2.length; i++) {
+    sum += arr2[i];
+  }
+  return sum;
+}
+
+arrayPlusArray([1, 2, 3], [4, 5, 6]);
 
 // Convert a string to an array
 function stringToArray(string) {
@@ -162,6 +190,39 @@ function basicOp(operation, value1, value2) {
 }
 
 basicOp("*", 5, 5);
+
+// Century From Year
+function century(year) {
+  return Math.ceil(year / 100);
+}
+
+century(1705);
+
+// Cat years, Dog years
+function humanYearsCatYearsDogYears(humanYears) {
+  if (humanYears === 1) return [1, 15, 15];
+  catYears = 15 + 9 + (humanYears - 2) * 4;
+  dogYears = 15 + 9 + (humanYears - 2) * 5;
+  return [humanYears, catYears, dogYears];
+}
+
+humanYearsCatYearsDogYears(10);
+
+// Total amount of points
+function points(games) {
+  let totalPoints = 0;
+
+  for (let game of games) {
+    let homeGoals = game.split(":")[0];
+    let awayGoals = game.split(":")[1];
+    if (homeGoals > awayGoals) totalPoints += 3;
+    else if (homeGoals == awayGoals) totalPoints += 1;
+  }
+
+  return totalPoints;
+}
+
+points(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:4"]);
 
 // 7kyu
 // Vowel Count
