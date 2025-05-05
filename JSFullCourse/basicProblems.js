@@ -224,6 +224,19 @@ function points(games) {
 
 points(["1:0", "2:0", "3:0", "4:4", "2:2", "3:3", "1:4", "2:3", "2:4", "3:4"]);
 
+// Printing Array elements with Comma delimiters
+function printArray(array) {
+  let string = "";
+
+  for (let char of array) {
+    string += char;
+  }
+
+  return string.split("").join(",");
+}
+
+printArray(["h", "o", "l", "a"]);
+
 // 7kyu
 // Vowel Count
 function getCount(str) {
