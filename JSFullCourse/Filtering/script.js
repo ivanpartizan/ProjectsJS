@@ -84,6 +84,13 @@ let cartItemCount = 0;
 let productElements = [];
 
 products.forEach((product) => {
+  const productElement = createProductElement(product);
+
+  productElements.push(productElement);
+  productsWrapper.appendChild(productElement);
+});
+
+function createProductElement(product) {
   const productElement = document.createElement("div");
 
   productElement.className = "item space-y-2";
@@ -104,6 +111,5 @@ products.forEach((product) => {
     <strong>$${product.price.toLocaleString()}</strong>
     `;
 
-  productElements.push(productElement);
-  productsWrapper.appendChild(productElement);
-});
+  return productElement;
+}
