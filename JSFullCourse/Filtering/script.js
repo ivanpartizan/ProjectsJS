@@ -111,5 +111,23 @@ function createProductElement(product) {
     <strong>$${product.price.toLocaleString()}</strong>
     `;
 
+  productElement.querySelector(".status").addEventListener("click", updateCard);
+
   return productElement;
+}
+
+function updateCard(e) {
+  const statusEl = e.target;
+
+  if (statusEl.classList.contains("added")) {
+    statusEl.classList.remove("added");
+    statusEl.innerText = "Add To Cart";
+    statusEl.classList.remove("bg-red-600");
+    statusEl.classList.add("bg-gray-800");
+  } else {
+    statusEl.classList.add("added");
+    statusEl.innerText = "Remove From Cart";
+    statusEl.classList.remove("bg-gray-800");
+    statusEl.classList.add("bg-red-600");
+  }
 }
