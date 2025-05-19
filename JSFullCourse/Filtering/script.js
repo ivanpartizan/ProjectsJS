@@ -83,6 +83,9 @@ let cartItemCount = 0;
 
 let productElements = [];
 
+filtersContainer.addEventListener("change", filterProducts);
+searchInput.addEventListener("input", filterProducts);
+
 products.forEach((product) => {
   const productElement = createProductElement(product);
 
@@ -124,10 +127,16 @@ function updateCard(e) {
     statusEl.innerText = "Add To Cart";
     statusEl.classList.remove("bg-red-600");
     statusEl.classList.add("bg-gray-800");
+
+    cartItemCount--;
   } else {
     statusEl.classList.add("added");
     statusEl.innerText = "Remove From Cart";
     statusEl.classList.remove("bg-gray-800");
     statusEl.classList.add("bg-red-600");
+
+    cartItemCount++;
   }
+
+  cartCount.innerText = cartItemCount.toString();
 }
