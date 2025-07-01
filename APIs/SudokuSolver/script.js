@@ -25,123 +25,37 @@ const joinValues = () => {
 };
 
 const solve = () => {
-  const options = {
-    method: "POST",
-    url: "https://solve-sudoku.p.rapidapi.com/",
-    headers: {
-      "x-rapidapi-key": "dd246daf8emsh5c56367f132b388p1c9a77jsnb0b04a526d60",
-      "x-rapidapi-host": "solve-sudoku.p.rapidapi.com",
-      "Content-Type": "application/json",
-    },
-    "Content-Type": {
-      0: "{",
-      1: '"',
-      2: "p",
-      3: "u",
-      4: "z",
-      5: "z",
-      6: "l",
-      7: "e",
-      8: '"',
-      9: ":",
-      10: " ",
-      11: '"',
-      12: "2",
-      13: ".",
-      14: ".",
-      15: ".",
-      16: ".",
-      17: ".",
-      18: ".",
-      19: ".",
-      20: ".",
-      21: ".",
-      22: ".",
-      23: ".",
-      24: ".",
-      25: ".",
-      26: "6",
-      27: "2",
-      28: ".",
-      29: ".",
-      30: ".",
-      31: ".",
-      32: "1",
-      33: ".",
-      34: ".",
-      35: ".",
-      36: ".",
-      37: "7",
-      38: ".",
-      39: ".",
-      40: ".",
-      41: "6",
-      42: ".",
-      43: ".",
-      44: "8",
-      45: ".",
-      46: ".",
-      47: ".",
-      48: "3",
-      49: ".",
-      50: ".",
-      51: ".",
-      52: "9",
-      53: ".",
-      54: ".",
-      55: ".",
-      56: "7",
-      57: ".",
-      58: ".",
-      59: ".",
-      60: "6",
-      61: ".",
-      62: ".",
-      63: "4",
-      64: ".",
-      65: ".",
-      66: ".",
-      67: "4",
-      68: ".",
-      69: ".",
-      70: ".",
-      71: ".",
-      72: "8",
-      73: ".",
-      74: ".",
-      75: ".",
-      76: ".",
-      77: "5",
-      78: "2",
-      79: ".",
-      80: ".",
-      81: ".",
-      82: ".",
-      83: ".",
-      84: ".",
-      85: ".",
-      86: ".",
-      87: ".",
-      88: ".",
-      89: ".",
-      90: ".",
-      91: ".",
-      92: "3",
-      93: '"',
-      94: "}",
-    },
+  joinValues(); // This should fill in your 'submission' array
+  const data = submission.join("");
+
+  console.log("data", data);
+
+  const payload = {
+    puzzle: data,
   };
 
-  async function fetchData() {
-    try {
-      const response = await axios.request(options);
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  fetchData();
+  fetch("https://solve-sudoku.p.rapidapi.com/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-rapidapi-key": "dd246daf8emsh5c56367f132b388p1c9a77jsnb0b04a526d60",
+      "x-rapidapi-host": "solve-sudoku.p.rapidapi.com",
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Solved Puzzle:", data);
+      // you can now populate the solution to the UI here
+    })
+    .catch((error) => {
+      console.error("Error solving puzzle:", error);
+    });
 };
 
 solveButton.addEventListener("click", solve);
