@@ -24,6 +24,15 @@ const joinValues = () => {
   console.log(submission);
 };
 
+const populateValues = (isSolvable, solution) => {
+  const inputs = document.querySelectorAll("input");
+  if (isSolvable && solution) {
+    inputs.forEach((input, i) => {
+      input.value = solution[i];
+    });
+  }
+};
+
 const solve = () => {
   joinValues(); // This should fill in your 'submission' array
   const data = submission.join("");
@@ -51,7 +60,7 @@ const solve = () => {
     })
     .then((data) => {
       console.log("Solved Puzzle:", data);
-      // you can now populate the solution to the UI here
+      populateValues(data.solvable, data.solution);
     })
     .catch((error) => {
       console.error("Error solving puzzle:", error);
