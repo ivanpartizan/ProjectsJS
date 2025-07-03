@@ -1,5 +1,6 @@
 const puzzleBoard = document.querySelector("#puzzle");
 const solveButton = document.querySelector("#solve-button");
+const solutionDisplay = document.querySelector("#solution");
 
 const squares = 81;
 const submission = [];
@@ -30,6 +31,9 @@ const populateValues = (isSolvable, solution) => {
     inputs.forEach((input, i) => {
       input.value = solution[i];
     });
+    solutionDisplay.innerHTML = "This is the answer";
+  } else {
+    solutionDisplay.innerHTML = "This is not solvable";
   }
 };
 
