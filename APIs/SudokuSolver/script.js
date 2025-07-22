@@ -62,7 +62,7 @@ const solve = () => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-rapidapi-key": "dd246daf8emsh5c56367f132b388p1c9a77jsnb0b04a526d60",
+      "x-rapidapi-key": process.env.RAPID_API_KEY,
       "x-rapidapi-host": "solve-sudoku.p.rapidapi.com",
     },
     body: JSON.stringify(payload),
