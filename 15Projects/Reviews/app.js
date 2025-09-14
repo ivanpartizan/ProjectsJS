@@ -42,5 +42,23 @@ const randomBtn = document.querySelector(".random-btn");
 let currentItem = 0;
 
 window.addEventListener("DOMContentLoaded", function () {
-  console.log("shake");
+  showPerson(currentItem);
+});
+
+function showPerson(person) {
+  const item = reviews[person];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+}
+
+nextBtn.addEventListener("click", function () {
+  currentItem++;
+  showPerson(currentItem);
+});
+
+prevBtn.addEventListener("click", function () {
+  currentItem--;
+  showPerson(currentItem);
 });
