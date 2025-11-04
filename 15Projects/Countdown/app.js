@@ -51,6 +51,7 @@ function getRemainingTime() {
 
   let days = t / oneDay;
   days = Math.floor(days);
+  let hours = Math.floor((t % oneDay) / oneHour);
 }
 
 getRemainingTime();
